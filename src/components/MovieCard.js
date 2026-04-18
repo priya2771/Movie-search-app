@@ -15,9 +15,7 @@ function MovieCard({ movie }) {
         />
 
         <div className="overlay">
-          <span className="badge bg-warning text-dark">
-            {movie.Year}
-          </span>
+          <span className="badge bg-warning text-dark">{movie.Year}</span>
         </div>
       </div>
 

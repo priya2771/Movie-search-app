@@ -18,12 +18,12 @@ function App() {
         if (data.Search) {
           const uniqueMovies = [
             ...new Map(
-              data.Search.map((movie) => [movie.imdbID, movie])
+              data.Search.map((movie) => [movie.imdbID, movie]),
             ).values(),
           ];
 
           const sortedMovies = uniqueMovies.sort(
-            (a, b) => parseInt(b.Year) - parseInt(a.Year)
+            (a, b) => parseInt(b.Year) - parseInt(a.Year),
           );
 
           setMovies(sortedMovies);
@@ -36,19 +36,15 @@ function App() {
 
   return (
     <div className="bg-dark min-vh-100 text-white">
-      
       {/* Navbar */}
       <nav className="navbar navbar-dark bg-black px-4">
         <span className="navbar-brand fw-bold">🎬 Movie Explorer</span>
       </nav>
 
       <div className="container py-4">
-        
         <SearchBar setSearchTerm={setSearchTerm} />
 
-        {loading && (
-          <p className="text-center mt-4 fs-5">Loading movies...</p>
-        )}
+        {loading && <p className="text-center mt-4 fs-5">Loading movies...</p>}
 
         <div className="row mt-4">
           {movies.map((movie) => (
